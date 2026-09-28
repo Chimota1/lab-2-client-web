@@ -56,5 +56,5 @@ export function renderApp(): void {
   appContainer.appendChild(renderBookList(booksDb, usersDb, onUpdate));
   
   // UserList приймає просто масив користувачів
-  appContainer.appendChild(renderUserList(usersDb.getAll()));
+  appContainer.appendChild(renderUserList(usersDb, booksDb, onUpdate));
 }
