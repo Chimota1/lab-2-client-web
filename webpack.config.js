@@ -27,7 +27,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './public/index.html', // Підключаємо ваш статичний HTML
+      template: './index.html', // Підключаємо ваш статичний HTML
+      favicon: './public/favicon.ico', // Підключаємо ваш favicon
     }),
   ],
   devServer: {
