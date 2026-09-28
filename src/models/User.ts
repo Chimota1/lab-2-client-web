@@ -18,7 +18,6 @@ export class User implements IUser {
   get email(): string { return this._email; }
   get borrowedBooks(): string[] { return this._borrowedBooks; }
 
-  // Допоміжні методи для зміни стану позичених книг
   borrowBook(bookId: string): void {
     if (this._borrowedBooks.length < 3) {
       this._borrowedBooks.push(bookId);
@@ -27,5 +26,14 @@ export class User implements IUser {
 
   returnBook(bookId: string): void {
     this._borrowedBooks = this._borrowedBooks.filter(id => id !== bookId);
+  }
+
+  toJSON() {
+    return {
+      id: this.id,
+      name: this.name,
+      email: this.email,
+      borrowedBooks: this.borrowedBooks
+    };
   }
 }

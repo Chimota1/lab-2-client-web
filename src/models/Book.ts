@@ -22,4 +22,14 @@ export class Book implements IBook {
   get isBorrowed(): boolean { return this._isBorrowed; }
 
   set isBorrowed(status: boolean) { this._isBorrowed = status; }
+
+  toJSON() {
+    return {
+      id: this.id,
+      title: this.title,
+      author: this.author,
+      year: this.year,
+      isBorrowed: this.isBorrowed
+    };
+  }
 }
